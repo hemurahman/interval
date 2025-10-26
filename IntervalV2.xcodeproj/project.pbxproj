@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		91ADFB282EAECB8700510D9C /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = 91ADFB272EAECB8700510D9C /* PostgREST */; };
+		91ADFB2A2EAECB8700510D9C /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 91ADFB292EAECB8700510D9C /* Supabase */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		91ADFAD72EAEC85500510D9C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91ADFB2A2EAECB8700510D9C /* Supabase in Frameworks */,
+				91ADFB282EAECB8700510D9C /* PostgREST in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +119,8 @@
 			);
 			name = IntervalV2;
 			packageProductDependencies = (
+				91ADFB272EAECB8700510D9C /* PostgREST */,
+				91ADFB292EAECB8700510D9C /* Supabase */,
 			);
 			productName = IntervalV2;
 			productReference = 91ADFAC82EAEC85400510D9C /* IntervalV2.app */;
@@ -195,6 +204,9 @@
 			);
 			mainGroup = 91ADFABF2EAEC85400510D9C;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				91ADFB262EAECB8700510D9C /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 91ADFAC92EAEC85400510D9C /* Products */;
 			projectDirPath = "";
@@ -593,6 +605,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		91ADFB262EAECB8700510D9C /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		91ADFB272EAECB8700510D9C /* PostgREST */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 91ADFB262EAECB8700510D9C /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = PostgREST;
+		};
+		91ADFB292EAECB8700510D9C /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 91ADFB262EAECB8700510D9C /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 91ADFAC02EAEC85400510D9C /* Project object */;
 }
