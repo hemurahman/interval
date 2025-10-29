@@ -51,13 +51,13 @@ struct ArticleDetailView: View {
                     
                     // Tab Bar
                     HStack(spacing: 0) {
-                        TabButton(title: "Summary", isSelected: selectedTab == 0) {
+                        ArticleTabButton(title: "Summary", isSelected: selectedTab == 0) {
                             withAnimation { selectedTab = 0 }
                         }
-                        TabButton(title: "Deep Dive", isSelected: selectedTab == 1) {
+                        ArticleTabButton(title: "Deep Dive", isSelected: selectedTab == 1) {
                             withAnimation { selectedTab = 1 }
                         }
-                        TabButton(title: "Evidence", isSelected: selectedTab == 2) {
+                        ArticleTabButton(title: "Evidence", isSelected: selectedTab == 2) {
                             withAnimation { selectedTab = 2 }
                         }
                     }
@@ -105,14 +105,14 @@ struct ArticleDetailView: View {
                 .zIndex(1)
             }
         }
-        .onChange(of: showCoverageSheet) { _ in
+        .onChange(of: showCoverageSheet) {
             // Trigger animation
         }
     }
 }
 
-// MARK: - Tab Button
-struct TabButton: View {
+// MARK: - Article Tab Button
+struct ArticleTabButton: View {
     let title: String
     let isSelected: Bool
     let action: () -> Void
