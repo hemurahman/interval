@@ -40,7 +40,7 @@ struct SecondaryArticleCard: View {
         }
         .frame(height: 100)
         .padding()
-        .background(Color(UIColor.secondarySystemBackground))
+        .background(Color(red: 0.95, green: 0.95, blue: 0.95))
         .cornerRadius(12)
     }
 }

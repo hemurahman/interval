@@ -5,6 +5,7 @@ struct ArticleDetailView: View {
     @State private var selectedTab = 0
     @State private var showCoverageSheet = false
     @Environment(\.dismiss) var dismiss
+    @Environment(\.hideTabBar) var hideTabBar
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -107,6 +108,12 @@ struct ArticleDetailView: View {
         }
         .onChange(of: showCoverageSheet) {
             // Trigger animation
+        }
+        .onAppear {
+            hideTabBar.wrappedValue = true
+        }
+        .onDisappear {
+            hideTabBar.wrappedValue = false
         }
     }
 }
@@ -352,7 +359,7 @@ struct CoverageDetailSheet: View {
     @Binding var isPresented: Bool
     @State private var dragOffset: CGFloat = 0
     @GestureState private var isDragging = false
-    @State private var sheetOffset: CGFloat = UIScreen.main.bounds.height
+    @State private var sheetOffset: CGFloat = 1000
     
     var body: some View {
         GeometryReader { geometry in
@@ -508,7 +515,7 @@ struct CoverageDetailSheet: View {
     
     private func dismissSheet() {
         withAnimation(.spring(response: 0.4, dampingFraction: 0.8)) {
-            sheetOffset = UIScreen.main.bounds.height
+            sheetOffset = 1000
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             isPresented = false

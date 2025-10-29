@@ -32,7 +32,7 @@ struct MisinformationView: View {
                 Spacer()
             }
         }
-        .navigationBarHidden(true)
+        .toolbar(.hidden, for: .navigationBar)
     }
 }
 

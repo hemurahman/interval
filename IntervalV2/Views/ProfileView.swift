@@ -32,7 +32,7 @@ struct ProfileView: View {
                 Spacer()
             }
         }
-        .navigationBarHidden(true)
+        .toolbar(.hidden, for: .navigationBar)
     }
 }
 

@@ -39,7 +39,7 @@ struct FeaturedArticleCard: View {
             }
         }
         .padding()
-        .background(Color(UIColor.secondarySystemBackground))
+        .background(Color(red: 0.95, green: 0.95, blue: 0.95))
         .cornerRadius(16)
     }
 }

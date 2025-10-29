@@ -74,7 +74,7 @@ struct HomeView: View {
                 .padding(.horizontal)
             }
         }
-        .navigationBarHidden(true)
+        .toolbar(.hidden, for: .navigationBar)
         .refreshable {
             await viewModel.refresh()
         }
